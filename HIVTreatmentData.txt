@@ -1,0 +1,8 @@
+Days Post Inoculation	HIV RNA Concentration
+3			10
+7			750
+14			800
+21			750
+28			650
+35			700
+42			750
