@@ -20,16 +20,13 @@ from scipy.optimize import curve_fit
 
 # Create a function that defines the rhs of the differential equation system
 def calc_RHS(x,t):
-   #y = a list that contains the system state
-   #t = the time for which the right-hand-side of the system equations
-    #   is to be calculated.
-   #p = a tuple that contains any parameters needed for the model
+   #x = a list that contains the system state
+   #t = the time for which the right-hand-side of the system equation
     
     a = 38.11
     b = 8.78e-5
     c = 128.17
     du = 0.053
-    #2
     di = 2.29
     dv = 3.47
     
@@ -38,7 +35,7 @@ def calc_RHS(x,t):
     Ti = x[1]
     V = x[2]
 
-#   Calculate the rates of change (the derivatives)
+   #Calculate the rates of change (the derivatives)
     dTudt = a - b*Tu*V - du*Tu
     dTidt = b*Tu*V - di*Ti
     dVdt = c*Ti - dv*V
@@ -107,6 +104,7 @@ fig.tight_layout()  # otherwise the right y-label is slightly clipped
 plt.savefig('HIVModel2.png')
 plt.title('Concentration of HIV and T-Cells Over Time',fontsize=14)
 plt.show()
+#plot treatment/innoculation model
 plt.plot(Days,VirusData,linestyle='',marker='d',color='b',label='Data')
 plt.title('Concentration of HIV RNA Post Inoculation',fontsize=14)
 plt.xlabel('Days Post Inoculation')
